@@ -1,0 +1,16 @@
+.LOGTABLE cmsstemp.fastexp_log;
+
+.LOGON 10.97.10.200/xiaoy,CMSS2017;
+
+.BEGIN EXPORT 
+SESSIONS 2;
+
+.EXPORT OUTFILE CMSC_LIST_COMP_DVD_AMT.tmp MODE RECORD FORMAT TEXT;
+
+select cast(tjrq as char(7)), cast(cast(ssgsfhje as int) as char(30)) from nspubview.CMSC_LIST_COMP_DVD_AMT 
+where tjrq = (select max(tjrq) from nspubview.CMSC_LIST_COMP_DVD_AMT);
+
+.END EXPORT;
+
+.LOGOFF;
+

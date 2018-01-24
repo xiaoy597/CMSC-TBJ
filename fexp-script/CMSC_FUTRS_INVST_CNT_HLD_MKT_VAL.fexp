@@ -1,0 +1,21 @@
+.LOGTABLE cmsstemp.fastexp_log;
+
+.LOGON 10.97.10.200/xiaoy,CMSS2017;
+
+.BEGIN EXPORT 
+SESSIONS 2;
+
+.EXPORT OUTFILE CMSC_FUTRS_INVST_CNT_HLD_MKT_VAL.tmp MODE RECORD FORMAT TEXT;
+
+select 
+cast(tjrq as char(7)), 
+cast(tzzfl as char(5)),
+cast(cast(cjsl as int) as char(30)),
+cast(cjslzb as char(8))
+from nspubview.CMSC_FUTRS_INVST_CNT_HLD_MKT_VAL
+where tjrq = (select max(tjrq) from nspubview.CMSC_FUTRS_INVST_CNT_HLD_MKT_VAL);
+
+.END EXPORT;
+
+.LOGOFF;
+
