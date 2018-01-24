@@ -1,0 +1,170 @@
+--------------------------------CMSC_FUTRS_INVST_CNT--------------------------------
+
+REPLACE VIEW nspubview.CMSC_FUTRS_INVST_CNT(
+ TJRQ
+,QHTZZS
+) AS LOCKING nspubmart.CMSC_FUTRS_INVST_CNT FOR ACCESS SELECT
+ TJRQ (TITLE '统计日期')
+,QHTZZS (TITLE '期货投资者数')
+FROM nspubmart.CMSC_FUTRS_INVST_CNT;
+
+COMMENT ON nspubview.CMSC_FUTRS_INVST_CNT AS 'CMSC_J0007_期货投资者数';
+
+COMMENT ON nspubview.CMSC_FUTRS_INVST_CNT.TJRQ AS '统计日期';
+COMMENT ON nspubview.CMSC_FUTRS_INVST_CNT.QHTZZS AS '期货投资者数';
+
+--------------------------------CMSC_FUTRS_INVST_CNT_EQT--------------------------------
+
+REPLACE VIEW nspubview.CMSC_FUTRS_INVST_CNT_EQT(
+ TJRQ
+,TZZFL
+,QHTZZSL
+,QHTZZSLZB
+) AS LOCKING nspubmart.CMSC_FUTRS_INVST_CNT_EQT FOR ACCESS SELECT
+ TJRQ (TITLE '统计日期')
+,TZZFL (TITLE '投资者分类')
+,QHTZZSL (TITLE '期货投资者数量')
+,QHTZZSLZB (TITLE '期货投资者数量占比')
+FROM nspubmart.CMSC_FUTRS_INVST_CNT_EQT;
+
+COMMENT ON nspubview.CMSC_FUTRS_INVST_CNT_EQT AS 'CMSC_J0008_期货投资者数_按权益分布分类';
+
+COMMENT ON nspubview.CMSC_FUTRS_INVST_CNT_EQT.TJRQ AS '统计日期';
+COMMENT ON nspubview.CMSC_FUTRS_INVST_CNT_EQT.TZZFL AS '投资者分类';
+COMMENT ON nspubview.CMSC_FUTRS_INVST_CNT_EQT.QHTZZSL AS '期货投资者数量';
+COMMENT ON nspubview.CMSC_FUTRS_INVST_CNT_EQT.QHTZZSLZB AS '期货投资者数量占比';
+
+--------------------------------CMSC_FUTRS_INVST_CNT_HLD_MKT_VAL--------------------------------
+
+REPLACE VIEW nspubview.CMSC_FUTRS_INVST_CNT_HLD_MKT_VAL(
+ TJRQ
+,TZZFL
+,CJSL
+,CJSLZB
+) AS LOCKING nspubmart.CMSC_FUTRS_INVST_CNT_HLD_MKT_VAL FOR ACCESS SELECT
+ TJRQ (TITLE '统计日期')
+,TZZFL (TITLE '投资者分类')
+,CJSL (TITLE '成交数量')
+,CJSLZB (TITLE '成交数量占比')
+FROM nspubmart.CMSC_FUTRS_INVST_CNT_HLD_MKT_VAL;
+
+COMMENT ON nspubview.CMSC_FUTRS_INVST_CNT_HLD_MKT_VAL AS 'CMSC_J0009_投资者交易量_按持股市值分类';
+
+COMMENT ON nspubview.CMSC_FUTRS_INVST_CNT_HLD_MKT_VAL.TJRQ AS '统计日期';
+COMMENT ON nspubview.CMSC_FUTRS_INVST_CNT_HLD_MKT_VAL.TZZFL AS '投资者分类';
+COMMENT ON nspubview.CMSC_FUTRS_INVST_CNT_HLD_MKT_VAL.CJSL AS '成交数量';
+COMMENT ON nspubview.CMSC_FUTRS_INVST_CNT_HLD_MKT_VAL.CJSLZB AS '成交数量占比';
+
+--------------------------------CMSC_INVST_CNT_AGE--------------------------------
+
+REPLACE VIEW nspubview.CMSC_INVST_CNT_AGE(
+ TJRQ
+,TZZFL
+,TZZSL
+,TZZSLZB
+) AS LOCKING nspubmart.CMSC_INVST_CNT_AGE FOR ACCESS SELECT
+ TJRQ (TITLE '统计日期')
+,TZZFL (TITLE '投资者分类')
+,TZZSL (TITLE '投资者数量')
+,TZZSLZB (TITLE '投资者数量占比')
+FROM nspubmart.CMSC_INVST_CNT_AGE;
+
+COMMENT ON nspubview.CMSC_INVST_CNT_AGE AS 'CMSC_J0005_投资者数_按年龄分类';
+
+COMMENT ON nspubview.CMSC_INVST_CNT_AGE.TJRQ AS '统计日期';
+COMMENT ON nspubview.CMSC_INVST_CNT_AGE.TZZFL AS '投资者分类';
+COMMENT ON nspubview.CMSC_INVST_CNT_AGE.TZZSL AS '投资者数量';
+COMMENT ON nspubview.CMSC_INVST_CNT_AGE.TZZSLZB AS '投资者数量占比';
+
+--------------------------------CMSC_INVST_CNT_EDCT--------------------------------
+
+REPLACE VIEW nspubview.CMSC_INVST_CNT_EDCT(
+ TJRQ
+,TZZFL
+,TZZSL
+,TZZSLZB
+) AS LOCKING nspubmart.CMSC_INVST_CNT_EDCT FOR ACCESS SELECT
+ TJRQ (TITLE '统计日期')
+,TZZFL (TITLE '投资者分类')
+,TZZSL (TITLE '投资者数量')
+,TZZSLZB (TITLE '投资者数量占比')
+FROM nspubmart.CMSC_INVST_CNT_EDCT;
+
+COMMENT ON nspubview.CMSC_INVST_CNT_EDCT AS 'CMSC_J0004_投资者数_按学历分类';
+
+COMMENT ON nspubview.CMSC_INVST_CNT_EDCT.TJRQ AS '统计日期';
+COMMENT ON nspubview.CMSC_INVST_CNT_EDCT.TZZFL AS '投资者分类';
+COMMENT ON nspubview.CMSC_INVST_CNT_EDCT.TZZSL AS '投资者数量';
+COMMENT ON nspubview.CMSC_INVST_CNT_EDCT.TZZSLZB AS '投资者数量占比';
+
+--------------------------------CMSC_INVST_CNT_HLD_MKT_VAL--------------------------------
+
+REPLACE VIEW nspubview.CMSC_INVST_CNT_HLD_MKT_VAL(
+ TJRQ
+,TZZFL
+,TZZSL
+,TZZSLZB
+) AS LOCKING nspubmart.CMSC_INVST_CNT_HLD_MKT_VAL FOR ACCESS SELECT
+ TJRQ (TITLE '统计日期')
+,TZZFL (TITLE '投资者分类')
+,TZZSL (TITLE '投资者数量')
+,TZZSLZB (TITLE '投资者数量占比')
+FROM nspubmart.CMSC_INVST_CNT_HLD_MKT_VAL;
+
+COMMENT ON nspubview.CMSC_INVST_CNT_HLD_MKT_VAL AS 'CMSC_J0006_投资者数_按持股市值分类';
+
+COMMENT ON nspubview.CMSC_INVST_CNT_HLD_MKT_VAL.TJRQ AS '统计日期';
+COMMENT ON nspubview.CMSC_INVST_CNT_HLD_MKT_VAL.TZZFL AS '投资者分类';
+COMMENT ON nspubview.CMSC_INVST_CNT_HLD_MKT_VAL.TZZSL AS '投资者数量';
+COMMENT ON nspubview.CMSC_INVST_CNT_HLD_MKT_VAL.TZZSLZB AS '投资者数量占比';
+
+--------------------------------CMSC_LIST_COMP_DVD_AMT--------------------------------
+
+REPLACE VIEW nspubview.CMSC_LIST_COMP_DVD_AMT(
+ TJRQ
+,SSGSFHJE
+) AS LOCKING nspubmart.CMSC_LIST_COMP_DVD_AMT FOR ACCESS SELECT
+ TJRQ (TITLE '统计日期')
+,SSGSFHJE (TITLE '上市公司分红金额')
+FROM nspubmart.CMSC_LIST_COMP_DVD_AMT;
+
+COMMENT ON nspubview.CMSC_LIST_COMP_DVD_AMT AS 'CMSC_J0001_上市公司分红金额';
+
+COMMENT ON nspubview.CMSC_LIST_COMP_DVD_AMT.TJRQ AS '统计日期';
+COMMENT ON nspubview.CMSC_LIST_COMP_DVD_AMT.SSGSFHJE AS '上市公司分红金额';
+
+--------------------------------CMSC_OPEN_INVST_CNT--------------------------------
+
+REPLACE VIEW nspubview.CMSC_OPEN_INVST_CNT(
+ TJRQ
+,PD
+,ZZRKHS
+,JGKHS
+) AS LOCKING nspubmart.CMSC_OPEN_INVST_CNT FOR ACCESS SELECT
+ TJRQ (TITLE '统计日期')
+,PD (TITLE '频度')
+,ZZRKHS (TITLE '自然人开户数')
+,JGKHS (TITLE '机构开户数')
+FROM nspubmart.CMSC_OPEN_INVST_CNT;
+
+COMMENT ON nspubview.CMSC_OPEN_INVST_CNT AS 'CMSC_J0003_开户数';
+
+COMMENT ON nspubview.CMSC_OPEN_INVST_CNT.TJRQ AS '统计日期';
+COMMENT ON nspubview.CMSC_OPEN_INVST_CNT.PD AS '频度';
+COMMENT ON nspubview.CMSC_OPEN_INVST_CNT.ZZRKHS AS '自然人开户数';
+COMMENT ON nspubview.CMSC_OPEN_INVST_CNT.JGKHS AS '机构开户数';
+
+--------------------------------CMSC_TOT_INVST_CNT--------------------------------
+
+REPLACE VIEW nspubview.CMSC_TOT_INVST_CNT(
+ TJRQ
+,TZZZRS
+) AS LOCKING nspubmart.CMSC_TOT_INVST_CNT FOR ACCESS SELECT
+ TJRQ (TITLE '统计日期')
+,TZZZRS (TITLE '投资者总人数')
+FROM nspubmart.CMSC_TOT_INVST_CNT;
+
+COMMENT ON nspubview.CMSC_TOT_INVST_CNT AS 'CMSC_J0002_投资者数';
+
+COMMENT ON nspubview.CMSC_TOT_INVST_CNT.TJRQ AS '统计日期';
+COMMENT ON nspubview.CMSC_TOT_INVST_CNT.TZZZRS AS '投资者总人数';
