@@ -20,7 +20,7 @@ dircopy('sql-template', "$release_dir/sql");
 dircopy('fexp-script', "$release_dir/fexp-script");
 
 mkpath("$release_dir/perl");
-open(my $sql_dir, "$release_dir/sql") || die "Unable to open sql dir.\n";
+opendir(my $sql_dir, "$release_dir/sql") || die "Unable to open sql dir.\n";
 my @sql_files = readdir($sql_dir);
 for my $sql_f (@sql_files) {
     if ($sql_f =~ /\.sql/) {
