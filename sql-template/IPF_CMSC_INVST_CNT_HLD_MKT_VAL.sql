@@ -1,3 +1,17 @@
+/*
+版本信息:1.0
+创建者	:XYU
+功能描述:投资者数_按持股市值分类
+加载类型:全量加载
+源		 表：
+	NSODATA.CSDC_INTG_UAP_SEC_ACCT	---统一账户平台证券账户表
+	NSPDATA.ACT_STK_INVST_CLSF_HIS	---股票投资者分类表
+目	标	表:	nsPubMart.CMSC_INVST_CNT_HLD_MKT_VAL	-- 投资者数_按持股市值分类
+频		 度:M:月
+创建日期:	2018-01-24
+修改历史:
+修改人	修改日期	修改内容
+*/
 
 DELETE FROM ${NSPUBMART}.CMSC_INVST_CNT_HLD_MKT_VAL
 WHERE TJRQ = SUBSTR(CAST(CAST(ADD_MONTHS(CAST('${TXDATE}' AS DATE FORMAT 'YYYYMMDD'),-1) AS DATE FORMAT 'YYYYMMDD') AS CHAR(8)),1,6)

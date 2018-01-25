@@ -67,7 +67,9 @@ my $txdate = $r->{TXDATE};
 my $indc = substr($tmp_tab, 0, 3);
 my $jobname = substr($tmp_tab, 4);
 
-if ($indc eq "SUM" or $indc eq "KPI" or $indc eq "SPE" or $indc eq "PUB") {$dbname = $ETL_PUB_ALL::AUTO_nsPUBMart;}    #nsPUBMART
+if ($indc eq "IPF" or $indc eq "SUM" or $indc eq "KPI" or $indc eq "SPE" or $indc eq "PUB") {
+    $dbname = $ETL_PUB_ALL::AUTO_nsPUBMart;
+}    #nsPUBMART
 elsif ($indc eq "SMS") {$dbname = $ETL_PUB_ALL::AUTO_nsSMSMart;}    #nsSMSMART
 elsif ($indc eq "RMS") {$dbname = $ETL_PUB_ALL::AUTO_nsRMSMart;}    #nsRMSMART
 elsif ($indc eq "SDM") {$dbname = $ETL_PUB_ALL::AUTO_nsSMSDM;}    #nsSMSDM

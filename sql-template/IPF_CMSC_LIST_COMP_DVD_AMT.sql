@@ -1,3 +1,16 @@
+/*
+版本信息:1.0
+创建者	:XYU
+功能描述:上市公司分红金额
+加载类型:全量加载
+源		 表：
+	NSPUBMART.MID_STK_DVD	--- 股票分红表
+目	标	表:	nsPubMart.CMSC_LIST_COMP_DVD_AMT	-- 上市公司分红金额
+频		 度:M:月
+创建日期:	2018-01-24
+修改历史:
+修改人	修改日期	修改内容
+*/
 
 DELETE FROM ${NSPUBMART}.CMSC_LIST_COMP_DVD_AMT
 WHERE TJRQ = SUBSTR(CAST(CAST(ADD_MONTHS(CAST('${TXDATE}' AS DATE FORMAT 'YYYYMMDD'),-1) AS DATE FORMAT 'YYYYMMDD') AS CHAR(8)),1,6)

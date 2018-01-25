@@ -1,3 +1,16 @@
+/*
+版本信息:1.0
+创建者	:XYU
+功能描述:投资者数
+加载类型:全量加载
+源		 表：
+	NSPUBMART.KPI_OAP_ACCT_VOL -- 一码通账户数
+目	标	表:	nsPubMart.CMSC_TOT_INVST_CNT	-- 投资者数
+频		 度:M:月
+创建日期:	2018-01-24
+修改历史:
+修改人	修改日期	修改内容
+*/
 
 DELETE FROM ${NSPUBMART}.CMSC_TOT_INVST_CNT
 WHERE TJRQ = SUBSTR(CAST(CAST(ADD_MONTHS(CAST('${TXDATE}' AS DATE FORMAT 'YYYYMMDD'),-1) AS DATE FORMAT 'YYYYMMDD') AS CHAR(8)),1,6)
